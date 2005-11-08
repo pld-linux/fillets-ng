@@ -3,11 +3,11 @@
 %define _data_ver	0.7.1
 
 Summary:	Fish Fillets - Next Generation
-Summary(pl):	Fish Fillets - Next Generation
+Summary(pl):	Fish Fillets - Next Generation (linuksowy port gry)
 Name:		fillets-ng
 Version:	%{_game_ver}
-Release:	1
-License:	GPLv2+
+Release:	0.1
+License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/fillets/%{name}-%{version}.tar.gz
 # Source0-md5:	3cdb20616c8bf4498f2990f4e0d526a1
@@ -20,10 +20,10 @@ BuildRequires:	SDL-devel >= 1.2.0
 BuildRequires:	SDL_image-devel
 BuildRequires:	SDL_mixer-devel
 BuildRequires:	SDL_ttf-devel
-BuildRequires:	fribidi-devel
-BuildRequires:	lua50-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	fribidi-devel
+BuildRequires:	lua50-devel
 BuildRequires:	sed >= 4.0
 Requires:	%{name}-data = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -37,27 +37,27 @@ The goal in every of the seventy levels is always the same: find
 a safe way out.
 
 %description -l pl
-Fish Fillets NG to port wspania³ej gry logicznej Fish Fillets napisanej
-przez ALTAR interactive. To gra na my¶lenie. Zadanie gracza w ka¿dym
-z siedemdziesiêciu poziomów jest zawsze takie same: odnale¼æ bezpieczne
-wyj¶cie.
+Fish Fillets NG to port wspania³ej gry logicznej Fish Fillets
+napisanej przez ALTAR interactive. To gra na my¶lenie. Zadanie gracza
+w ka¿dym z siedemdziesiêciu poziomów jest zawsze takie same: odnale¼æ
+bezpieczne wyj¶cie.
 
 %package docs
 Summary:	A manual for Fish Fillets NG
 Summary(pl):	Instrukcja do Fish Fillets NG
-Group:	X11/Applications/Games
+Group:		X11/Applications/Games
 Requires:	%{name} = %{version}-%{release}
 
 %description docs
-A manual for Fish Fillets NG
+A manual for Fish Fillets NG.
 
 %description docs -l pl
-Instrukcja do Fish Fillets
+Instrukcja do Fish Fillets.
 
 %package data
 Summary:	Data files for Fish Fillets NG
 Summary(pl):	Pliki z danymi dla Fish Fillets NG
-Group:	X11/Application/Games
+Group:		X11/Application/Games
 Requires:	%{name} = %{version}-%{release}
 
 %description data
@@ -79,7 +79,7 @@ Pliki z danymi dla Fish Fillets NG
 
 # Now isn't that nasty? but I don't know how to do this better
 find -name Makefile -exec \
-	%{__sed} -i 's|LUA_LIBS = -L/usr/include/lua50 -llua -llualib|LUA_LIBS = -L/usr/include/lua50 -llua50 -llualib50|' {} \
+	%{__sed} -i 's|LUA_LIBS = -L/usr/include/lua50 -llua -llualib|LUA_LIBS = -llua50 -llualib50|' {} \
 	\;
 %{__make}
 
@@ -118,6 +118,7 @@ rm -rf $RPM_BUILD_ROOT
 %files data
 %defattr(644,root,root,755)
 %doc %{_gamedatadir}/images/menu/flags/copyright
+# XXX: MISSING DIRS
 %{_gamedatadir}/font/*
 %{_gamedatadir}/images/*.png
 %{_gamedatadir}/images/*/*.png
@@ -134,4 +135,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_gamedatadir}/sound/*/*/*/*.ogg
 
 %files docs
-%{_datadir}/%{name}/doc/html/*
+%defattr(644,root,root,755)
+%dir %{_datadir}/%{name}/doc
+%{_datadir}/%{name}/doc/html
