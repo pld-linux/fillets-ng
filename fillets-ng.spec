@@ -3,7 +3,7 @@
 %define _data_ver	0.7.1
 
 Summary:	Fish Fillets - Next Generation
-Summary(pl.UTF-8):   Fish Fillets - Next Generation (linuksowy port gry)
+Summary(pl.UTF-8):	Fish Fillets - Next Generation (linuksowy port gry)
 Name:		fillets-ng
 Version:	%{_game_ver}
 Release:	0.1
@@ -44,7 +44,7 @@ bezpieczne wyjście.
 
 %package docs
 Summary:	A manual for Fish Fillets NG
-Summary(pl.UTF-8):   Instrukcja do Fish Fillets NG
+Summary(pl.UTF-8):	Instrukcja do Fish Fillets NG
 Group:		X11/Applications/Games
 Requires:	%{name} = %{version}-%{release}
 
@@ -56,7 +56,7 @@ Instrukcja do Fish Fillets.
 
 %package data
 Summary:	Data files for Fish Fillets NG
-Summary(pl.UTF-8):   Pliki z danymi dla Fish Fillets NG
+Summary(pl.UTF-8):	Pliki z danymi dla Fish Fillets NG
 Group:		X11/Application/Games
 Requires:	%{name} = %{version}-%{release}
 
