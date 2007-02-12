@@ -3,7 +3,7 @@
 %define _data_ver	0.7.1
 
 Summary:	Fish Fillets - Next Generation
-Summary(pl):	Fish Fillets - Next Generation (linuksowy port gry)
+Summary(pl.UTF-8):   Fish Fillets - Next Generation (linuksowy port gry)
 Name:		fillets-ng
 Version:	%{_game_ver}
 Release:	0.1
@@ -36,34 +36,34 @@ from ALTAR interactive. Fish Fillets NG is strictly a puzzle game.
 The goal in every of the seventy levels is always the same: find
 a safe way out.
 
-%description -l pl
-Fish Fillets NG to port wspania≥ej gry logicznej Fish Fillets
-napisanej przez ALTAR interactive. To gra na my∂lenie. Zadanie gracza
-w kaødym z siedemdziesiÍciu poziomÛw jest zawsze takie same: odnaleºÊ
-bezpieczne wyj∂cie.
+%description -l pl.UTF-8
+Fish Fillets NG to port wspania≈Çej gry logicznej Fish Fillets
+napisanej przez ALTAR interactive. To gra na my≈õlenie. Zadanie gracza
+w ka≈ºdym z siedemdziesiƒôciu poziom√≥w jest zawsze takie same: odnale≈∫ƒá
+bezpieczne wyj≈õcie.
 
 %package docs
 Summary:	A manual for Fish Fillets NG
-Summary(pl):	Instrukcja do Fish Fillets NG
+Summary(pl.UTF-8):   Instrukcja do Fish Fillets NG
 Group:		X11/Applications/Games
 Requires:	%{name} = %{version}-%{release}
 
 %description docs
 A manual for Fish Fillets NG.
 
-%description docs -l pl
+%description docs -l pl.UTF-8
 Instrukcja do Fish Fillets.
 
 %package data
 Summary:	Data files for Fish Fillets NG
-Summary(pl):	Pliki z danymi dla Fish Fillets NG
+Summary(pl.UTF-8):   Pliki z danymi dla Fish Fillets NG
 Group:		X11/Application/Games
 Requires:	%{name} = %{version}-%{release}
 
 %description data
 Data files for Fish Fillets NG.
 
-%description data -l pl
+%description data -l pl.UTF-8
 Pliki z danymi dla Fish Fillets NG
 
 %prep
