@@ -1,18 +1,18 @@
 
-%define	_game_ver	0.7.3
-%define _data_ver	0.7.1
+%define	_game_ver	0.7.4
+%define _data_ver	0.7.4
 
 Summary:	Fish Fillets - Next Generation
 Summary(pl.UTF-8):	Fish Fillets - Next Generation (linuksowy port gry)
 Name:		fillets-ng
 Version:	%{_game_ver}
-Release:	0.1
+Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/fillets/%{name}-%{version}.tar.gz
-# Source0-md5:	3cdb20616c8bf4498f2990f4e0d526a1
+# Source0-md5:	912c146e70d90092a3dc89928e0be0f8
 Source1:	http://dl.sourceforge.net/fillets/%{name}-data-%{_data_ver}.tar.gz
-# Source1-md5:	dabb8aa5dcce57e782a2a27343c40cc6
+# Source1-md5:	0a2a651342d1035c292817048a4e373c
 Source2:	%{name}.desktop
 Source3:	%{name}.png
 URL:		http://fishfillets.sourceforge.net/
@@ -96,6 +96,14 @@ install %{SOURCE2} $RPM_BUILD_ROOT%{_desktopdir}
 install %{SOURCE3} $RPM_BUILD_ROOT%{_pixmapsdir}
 cp -Rfa %{name}-data-%{_data_ver}/{images,font,music,script,sound} $RPM_BUILD_ROOT%{_gamedatadir}
 cp -Rfa %{name}-data-%{_data_ver}/doc $RPM_BUILD_ROOT%{_datadir}/%{name}
+mv $RPM_BUILD_ROOT%{_bindir}/fillets $RPM_BUILD_ROOT%{_bindir}/fillets.bin
+cat > $RPM_BUILD_ROOT%{_bindir}/fillets << EOF
+#!/bin/sh
+
+%{_bindir}/fillets.bin systemdir=%{_gamedatadir} \$@
+EOF
+
+find $RPM_BUILD_ROOT%{_gamedatadir} -type d -fprintf %{name}.dirs '%%%%dir %{_gamedatadir}/%%P\n'
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -115,10 +123,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/%{name}.desktop
 %{_pixmapsdir}/%{name}.png
 
-%files data
+%files data -f %{name}.dirs
 %defattr(644,root,root,755)
 %doc %{_gamedatadir}/images/menu/flags/copyright
-# XXX: MISSING DIRS
 %{_gamedatadir}/font/*
 %{_gamedatadir}/images/*.png
 %{_gamedatadir}/images/*/*.png
