@@ -59,7 +59,7 @@ Instrukcja do Fish Fillets.
 %package data
 Summary:	Data files for Fish Fillets NG
 Summary(pl.UTF-8):	Pliki z danymi dla Fish Fillets NG
-Group:		X11/Application/Games
+Group:		X11/Applications/Games
 Requires:	%{name} = %{version}-%{release}
 
 %description data
@@ -71,15 +71,15 @@ Pliki z danymi dla Fish Fillets NG
 %package intro
 Summary:	Introduction video to Fish Fillets NG game
 Summary(pl.UTF-8):	Film wprowadzający do gry Fish Fillets NG
-Group:		X11/Application/Games
+Group:		X11/Applications/Games
 Requires:	%{name} = %{version}-%{release}
 Requires:	mplayer
 
 %description intro
-Introduction video to Fish Fillets NG game
+Introduction video to Fish Fillets NG game.
 
 %description intro -l pl.UTF-8
-Film wprowadzający do gry Fish Fillets NG
+Film wprowadzający do gry Fish Fillets NG.
 
 %prep
 %setup -q -a1
