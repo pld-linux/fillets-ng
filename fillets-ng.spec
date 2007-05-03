@@ -6,7 +6,7 @@ Summary:	Fish Fillets - Next Generation
 Summary(pl.UTF-8):	Fish Fillets - Next Generation (linuksowy port gry)
 Name:		fillets-ng
 Version:	%{_game_ver}
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/fillets/%{name}-%{version}.tar.gz
@@ -15,7 +15,9 @@ Source1:	http://dl.sourceforge.net/fillets/%{name}-data-%{_data_ver}.tar.gz
 # Source1-md5:	0a2a651342d1035c292817048a4e373c
 Source2:	%{name}.desktop
 Source3:	%{name}.png
-URL:		http://fishfillets.sourceforge.net/
+Source4:	http://fillets.sourceforge.net/intro.avi
+# Source4-md5:	1bb4daa05062cd0c8f867320d70e84d9
+URL:		http://fillets.sourceforge.net/
 BuildRequires:	SDL-devel >= 1.2.0
 BuildRequires:	SDL_image-devel
 BuildRequires:	SDL_mixer-devel
@@ -66,6 +68,19 @@ Data files for Fish Fillets NG.
 %description data -l pl.UTF-8
 Pliki z danymi dla Fish Fillets NG
 
+%package intro
+Summary:	Introduction video to Fish Fillets NG game
+Summary(pl.UTF-8):	Film wprowadzający do gry Fish Fillets NG
+Group:		X11/Application/Games
+Requires:	%{name} = %{version}-%{release}
+Requires:	mplayer
+
+%description intro
+Introduction video to Fish Fillets NG game
+
+%description intro -l pl.UTF-8
+Film wprowadzający do gry Fish Fillets NG
+
 %prep
 %setup -q -a1
 
@@ -103,7 +118,22 @@ cat > $RPM_BUILD_ROOT%{_bindir}/fillets << EOF
 %{_bindir}/fillets.bin systemdir=%{_gamedatadir} \$@
 EOF
 
+install %{SOURCE4} $RPM_BUILD_ROOT%{_gamedatadir}
+cat > $RPM_BUILD_ROOT%{_desktopdir}/fillets-ng-intro.desktop << EOF
+[Desktop Entry]
+Name=Fish Fillets Intro
+Comment=Fish Fillets NG - Introduction
+Exec=mplayer -fs %{_gamedatadir}/intro.avi
+Icon=fillets-ng.png
+Terminal=false
+Type=Application
+Encoding=UTF-8
+Categories=Game;LogicGame;
+# vi: encoding=utf-8
+EOF
+
 find $RPM_BUILD_ROOT%{_gamedatadir} -type d -fprintf %{name}.dirs '%%%%dir %{_gamedatadir}/%%P\n'
+
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -145,3 +175,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %dir %{_datadir}/%{name}/doc
 %{_datadir}/%{name}/doc/html
+
+%files intro
+%defattr(644,root,root,755)
+%{_gamedatadir}/intro.avi
+%{_desktopdir}/%{name}-intro.desktop
