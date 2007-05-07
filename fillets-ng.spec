@@ -46,7 +46,7 @@ bezpieczne wyjście.
 
 %package docs
 Summary:	A manual for Fish Fillets NG
-Summary(pl.UTF-8):	Instrukcja do Fish Fillets NG
+Summary(pl.UTF-8):	Instrukcja do gry Fish Fillets NG
 Group:		X11/Applications/Games
 Requires:	%{name} = %{version}-%{release}
 
@@ -54,11 +54,11 @@ Requires:	%{name} = %{version}-%{release}
 A manual for Fish Fillets NG.
 
 %description docs -l pl.UTF-8
-Instrukcja do Fish Fillets.
+Instrukcja do gry Fish Fillets.
 
 %package data
 Summary:	Data files for Fish Fillets NG
-Summary(pl.UTF-8):	Pliki z danymi dla Fish Fillets NG
+Summary(pl.UTF-8):	Pliki z danymi do gry Fish Fillets NG
 Group:		X11/Applications/Games
 Requires:	%{name} = %{version}-%{release}
 
@@ -66,7 +66,7 @@ Requires:	%{name} = %{version}-%{release}
 Data files for Fish Fillets NG.
 
 %description data -l pl.UTF-8
-Pliki z danymi dla Fish Fillets NG
+Pliki z danymi do gry Fish Fillets NG.
 
 %package intro
 Summary:	Introduction video to Fish Fillets NG game
