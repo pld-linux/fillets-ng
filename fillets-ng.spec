@@ -1,18 +1,18 @@
 
-%define	_game_ver	0.7.4
-%define _data_ver	0.7.4
+%define	_game_ver	0.8.0
+%define _data_ver	0.8.0
 
 Summary:	Fish Fillets - Next Generation
 Summary(pl.UTF-8):	Fish Fillets - Next Generation (linuksowy port gry)
 Name:		fillets-ng
 Version:	%{_game_ver}
-Release:	2
+Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/fillets/%{name}-%{version}.tar.gz
-# Source0-md5:	912c146e70d90092a3dc89928e0be0f8
+# Source0-md5:	5daccbed195ae74cdfa54755ef62e3ce
 Source1:	http://dl.sourceforge.net/fillets/%{name}-data-%{_data_ver}.tar.gz
-# Source1-md5:	0a2a651342d1035c292817048a4e373c
+# Source1-md5:	dd43ff637bdc1e4e7445b35ce0a1aa1c
 Source2:	%{name}.desktop
 Source3:	%{name}.png
 Source4:	http://fillets.sourceforge.net/intro.avi
