@@ -2,9 +2,8 @@
 Name=Fish Fillets
 Comment=Fish Fillets - New Generation
 Exec=fillets
-Icon=fillets-ng.png
+Icon=fillets-ng
 Terminal=false
 Type=Application
-Encoding=UTF-8
 Categories=Game;LogicGame;
 # vi: encoding=utf-8
