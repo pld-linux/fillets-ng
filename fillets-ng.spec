@@ -1,6 +1,6 @@
 
-%define	_game_ver	0.8.0
-%define _data_ver	0.8.0
+%define	_game_ver	0.8.1
+%define _data_ver	0.8.1
 
 Summary:	Fish Fillets - Next Generation
 Summary(pl.UTF-8):	Fish Fillets - Next Generation (linuksowy port gry)
@@ -10,9 +10,9 @@ Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/fillets/%{name}-%{version}.tar.gz
-# Source0-md5:	5daccbed195ae74cdfa54755ef62e3ce
+# Source0-md5:	d581b18c648336cf7fd0f0551068625a
 Source1:	http://dl.sourceforge.net/fillets/%{name}-data-%{_data_ver}.tar.gz
-# Source1-md5:	dd43ff637bdc1e4e7445b35ce0a1aa1c
+# Source1-md5:	5919ce057626d3ee565cc7cc71a80f7b
 Source2:	%{name}.desktop
 Source3:	%{name}.png
 Source4:	http://fillets.sourceforge.net/intro.avi
@@ -123,6 +123,7 @@ cat > $RPM_BUILD_ROOT%{_desktopdir}/fillets-ng-intro.desktop << EOF
 [Desktop Entry]
 Name=Fish Fillets Intro
 Comment=Fish Fillets NG - Introduction
+Comment[pl]=Fish Fillets NG - Wprowadzenie
 Exec=mplayer -fs %{_gamedatadir}/intro.avi
 Icon=fillets-ng.png
 Terminal=false
@@ -159,8 +160,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_gamedatadir}/font/*
 %{_gamedatadir}/images/*.png
 %{_gamedatadir}/images/*/*.png
-%{_gamedatadir}/images/*/*.svg
-%{_gamedatadir}/images/*/*.xcf
 %{_gamedatadir}/images/*/*/*.png
 %{_gamedatadir}/images/*/*/*/*.png
 %{_gamedatadir}/images/*/*/*/*/*.png
