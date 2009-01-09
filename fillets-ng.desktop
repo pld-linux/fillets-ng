@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=Fish Fillets
 Comment=Fish Fillets - New Generation
+Comment[pl]=Fish Fillets - Nowa Generacja
 Exec=fillets
 Icon=fillets-ng
 Terminal=false
