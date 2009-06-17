@@ -1,6 +1,6 @@
 
-%define	_game_ver	0.8.1
-%define _data_ver	0.8.1
+%define	_game_ver	0.9.0
+%define _data_ver	0.9.0
 
 Summary:	Fish Fillets - Next Generation
 Summary(pl.UTF-8):	Fish Fillets - Next Generation (linuksowy port gry)
@@ -10,13 +10,11 @@ Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/fillets/%{name}-%{version}.tar.gz
-# Source0-md5:	d581b18c648336cf7fd0f0551068625a
+# Source0-md5:	e3796febd2fd876467d4283d95cbc9a5
 Source1:	http://dl.sourceforge.net/fillets/%{name}-data-%{_data_ver}.tar.gz
-# Source1-md5:	5919ce057626d3ee565cc7cc71a80f7b
+# Source1-md5:	5d733a990212a4b038d1ee76f700c54e
 Source2:	%{name}.desktop
 Source3:	%{name}.png
-Source4:	http://fillets.sourceforge.net/intro.avi
-# Source4-md5:	1bb4daa05062cd0c8f867320d70e84d9
 URL:		http://fillets.sourceforge.net/
 BuildRequires:	SDL-devel >= 1.2.0
 BuildRequires:	SDL_image-devel
@@ -118,13 +116,13 @@ cat > $RPM_BUILD_ROOT%{_bindir}/fillets << EOF
 %{_bindir}/fillets.bin systemdir=%{_gamedatadir} \$@
 EOF
 
-install %{SOURCE4} $RPM_BUILD_ROOT%{_gamedatadir}
+install %{name}-data-%{_data_ver}/images/menu/intro.mpg $RPM_BUILD_ROOT%{_gamedatadir}
 cat > $RPM_BUILD_ROOT%{_desktopdir}/fillets-ng-intro.desktop << EOF
 [Desktop Entry]
 Name=Fish Fillets Intro
 Comment=Fish Fillets NG - Introduction
 Comment[pl]=Fish Fillets NG - Wprowadzenie
-Exec=mplayer -fs %{_gamedatadir}/intro.avi
+Exec=mplayer -fs %{_gamedatadir}/intro.mpg
 Icon=fillets-ng.png
 Terminal=false
 Type=Application
@@ -135,6 +133,7 @@ EOF
 
 find $RPM_BUILD_ROOT%{_gamedatadir} -type d -fprintf %{name}.dirs '%%%%dir %{_gamedatadir}/%%P\n'
 
+rm -rf $RPM_BUILD_ROOT%{_gamedatadir}/images/menu/intro.mpg
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -150,7 +149,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog NEWS TODO
 %attr(755,root,root) %{_bindir}/*
 %dir %{_datadir}/%{name}
-%{_mandir}/man*/*
+%{_mandir}/man6/fillets.*
 %{_desktopdir}/%{name}.desktop
 %{_pixmapsdir}/%{name}.png
 
@@ -177,5 +176,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files intro
 %defattr(644,root,root,755)
-%{_gamedatadir}/intro.avi
+%{_gamedatadir}/intro.mpg
 %{_desktopdir}/%{name}-intro.desktop
