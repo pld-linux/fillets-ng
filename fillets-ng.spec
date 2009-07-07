@@ -1,5 +1,5 @@
 
-%define	_game_ver	0.9.0
+%define	_game_ver	0.9.1
 %define _data_ver	0.9.0
 
 Summary:	Fish Fillets - Next Generation
@@ -10,7 +10,7 @@ Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/fillets/%{name}-%{version}.tar.gz
-# Source0-md5:	e3796febd2fd876467d4283d95cbc9a5
+# Source0-md5:	13bb4f98d73bc0b6aff39ee1c9582adb
 Source1:	http://dl.sourceforge.net/fillets/%{name}-data-%{_data_ver}.tar.gz
 # Source1-md5:	5d733a990212a4b038d1ee76f700c54e
 Source2:	%{name}.desktop
