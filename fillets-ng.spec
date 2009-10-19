@@ -1,6 +1,6 @@
 
-%define	_game_ver	0.9.1
-%define _data_ver	0.9.0
+%define	_game_ver	0.9.2
+%define _data_ver	0.9.2
 
 Summary:	Fish Fillets - Next Generation
 Summary(pl.UTF-8):	Fish Fillets - Next Generation (linuksowy port gry)
@@ -10,9 +10,9 @@ Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/fillets/%{name}-%{version}.tar.gz
-# Source0-md5:	13bb4f98d73bc0b6aff39ee1c9582adb
+# Source0-md5:	24578ad842a242439b893ad949556c28
 Source1:	http://dl.sourceforge.net/fillets/%{name}-data-%{_data_ver}.tar.gz
-# Source1-md5:	5d733a990212a4b038d1ee76f700c54e
+# Source1-md5:	00ea835425e5b1ca9fc3f110b40ff581
 Source2:	%{name}.desktop
 Source3:	%{name}.png
 URL:		http://fillets.sourceforge.net/
@@ -26,6 +26,7 @@ BuildRequires:	fribidi-devel
 BuildRequires:	lua50-devel
 BuildRequires:	sed >= 4.0
 Requires:	%{name}-data = %{version}-%{release}
+Suggests:	%{name}-intro = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define	_gamedatadir	%{_datadir}/games/%{name}
