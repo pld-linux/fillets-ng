@@ -1,5 +1,5 @@
 
-%define	_game_ver	0.9.2
+%define	_game_ver	0.9.3
 %define _data_ver	0.9.2
 
 Summary:	Fish Fillets - Next Generation
@@ -9,9 +9,9 @@ Version:	%{_game_ver}
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
-Source0:	http://dl.sourceforge.net/fillets/%{name}-%{version}.tar.gz
-# Source0-md5:	24578ad842a242439b893ad949556c28
-Source1:	http://dl.sourceforge.net/fillets/%{name}-data-%{_data_ver}.tar.gz
+Source0:	http://downloads.sourceforge.net/fillets/%{name}-%{version}.tar.gz
+# Source0-md5:	292555608dd0f24d7bb3a072ab0f7ea5
+Source1:	http://downloads.sourceforge.net/fillets/%{name}-data-%{_data_ver}.tar.gz
 # Source1-md5:	00ea835425e5b1ca9fc3f110b40ff581
 Source2:	%{name}.desktop
 Source3:	%{name}.png
@@ -33,9 +33,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Fish Fillets NG is a Linux port of wonderful puzzle game Fish Fillets
-from ALTAR interactive. Fish Fillets NG is strictly a puzzle game.
-The goal in every of the seventy levels is always the same: find
-a safe way out.
+from ALTAR interactive. Fish Fillets NG is strictly a puzzle game. The
+goal in every of the seventy levels is always the same: find a safe
+way out.
 
 %description -l pl.UTF-8
 Fish Fillets NG to port wspaniałej gry logicznej Fish Fillets
