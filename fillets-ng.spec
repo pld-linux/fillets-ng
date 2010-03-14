@@ -23,7 +23,9 @@ BuildRequires:	SDL_ttf-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	fribidi-devel
+BuildRequires:	libstdc++-devel
 BuildRequires:	lua50-devel
+BuildRequires:	pkgconfig
 BuildRequires:	sed >= 4.0
 Requires:	%{name}-data = %{version}-%{release}
 Suggests:	%{name}-intro = %{version}-%{release}
