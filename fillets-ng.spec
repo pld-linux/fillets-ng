@@ -1,6 +1,6 @@
 
-%define	_game_ver	0.9.3
-%define _data_ver	0.9.2
+%define	_game_ver	1.0.0
+%define _data_ver	1.0.0
 
 Summary:	Fish Fillets - Next Generation
 Summary(pl.UTF-8):	Fish Fillets - Next Generation (linuksowy port gry)
@@ -10,9 +10,9 @@ Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	http://downloads.sourceforge.net/fillets/%{name}-%{version}.tar.gz
-# Source0-md5:	292555608dd0f24d7bb3a072ab0f7ea5
+# Source0-md5:	276bb416d7f8bf9ef0969fd7a3c42d52
 Source1:	http://downloads.sourceforge.net/fillets/%{name}-data-%{_data_ver}.tar.gz
-# Source1-md5:	00ea835425e5b1ca9fc3f110b40ff581
+# Source1-md5:	94684229b554468efe7e0b0cc5185e5e
 Source2:	%{name}.desktop
 Source3:	%{name}.png
 URL:		http://fillets.sourceforge.net/
@@ -136,7 +136,7 @@ EOF
 
 find $RPM_BUILD_ROOT%{_gamedatadir} -type d -fprintf %{name}.dirs '%%%%dir %{_gamedatadir}/%%P\n'
 
-rm -rf $RPM_BUILD_ROOT%{_gamedatadir}/images/menu/intro.mpg
+%{__rm} -r $RPM_BUILD_ROOT%{_gamedatadir}/images/menu/intro.mpg
 
 %clean
 rm -rf $RPM_BUILD_ROOT
